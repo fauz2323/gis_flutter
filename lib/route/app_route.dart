@@ -10,4 +10,6 @@ abstract class _Path {
   static const HOMESCREEN = '/home';
   static const BOARDING = '/boarding';
   static const MAPS = '/maps';
+  static const PAGE = '/pages';
+  static const MENUS = '/menus';
 }
