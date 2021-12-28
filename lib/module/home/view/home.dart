@@ -45,13 +45,13 @@ class Home extends GetView<HomeController> {
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            '${controller.weatherModel.weatherText} ${controller.weatherModel.temperature.metric.value} °C',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
-                        ),
+                        // Padding(
+                        //   padding: const EdgeInsets.all(8.0),
+                        //   child: Text(
+                        //     '${controller.weatherModel.weatherText} ${controller.weatherModel.temperature.metric.value} °C',
+                        //     style: TextStyle(color: Colors.white, fontSize: 20),
+                        //   ),
+                        // ),
                         SizedBox(
                           height: 20,
                         ),

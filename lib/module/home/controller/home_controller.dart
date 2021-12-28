@@ -10,11 +10,15 @@ class HomeController extends GetxController {
   var loading = true.obs;
 
   initial() async {
-    print("aaa22");
-    final response = await http.get(API);
-    var jsonData = json.decode(response.body);
-    weatherModel = WeatherModel.fromJson(jsonData[0]);
-    loading.value = false;
+    try {
+      print("aaa22");
+      final response = await http.get(API);
+      var jsonData = json.decode(response.body);
+      weatherModel = WeatherModel.fromJson(jsonData[0]);
+      loading.value = false;
+    } catch (e) {
+      loading.value = false;
+    }
   }
 
   @override
