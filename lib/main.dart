@@ -18,6 +18,11 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     GetMaterialApp(
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: Color(0xff10347c),
+        ),
+      ),
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.route,
     ),

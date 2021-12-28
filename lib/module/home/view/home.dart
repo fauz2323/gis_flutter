@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:skripsi_ui/module/home/controller/home_controller.dart';
 
@@ -77,8 +78,12 @@ class Home extends GetView<HomeController> {
                                 padding: EdgeInsets.all(10),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
+                                  // ignore: prefer_const_literals_to_create_immutables
                                   children: [
-                                    Icon(Icons.storage_outlined),
+                                    FaIcon(
+                                      FontAwesomeIcons.mapMarkedAlt,
+                                      color: Colors.white,
+                                    )
                                   ],
                                 ),
                               ),
@@ -87,7 +92,9 @@ class Home extends GetView<HomeController> {
                               customBorder: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              onTap: () {},
+                              onTap: () {
+                                Get.toNamed('/pages', arguments: "gunung");
+                              },
                               child: Container(
                                 height: h * 8 / 100,
                                 width: h * 8 / 100,
@@ -101,7 +108,10 @@ class Home extends GetView<HomeController> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Icon(Icons.storage_outlined),
+                                    FaIcon(
+                                      FontAwesomeIcons.mountain,
+                                      color: Colors.white,
+                                    ),
                                   ],
                                 ),
                               ),
@@ -110,7 +120,9 @@ class Home extends GetView<HomeController> {
                               customBorder: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              onTap: () {},
+                              onTap: () {
+                                Get.toNamed('/pages', arguments: "Waterfall");
+                              },
                               child: Container(
                                 height: h * 8 / 100,
                                 width: h * 8 / 100,
@@ -124,7 +136,10 @@ class Home extends GetView<HomeController> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Icon(Icons.storage_outlined),
+                                    FaIcon(
+                                      FontAwesomeIcons.water,
+                                      color: Colors.white,
+                                    )
                                   ],
                                 ),
                               ),
@@ -133,7 +148,9 @@ class Home extends GetView<HomeController> {
                               customBorder: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              onTap: () {},
+                              onTap: () {
+                                Get.toNamed('/menus');
+                              },
                               child: Container(
                                 height: h * 8 / 100,
                                 width: h * 8 / 100,
@@ -147,7 +164,10 @@ class Home extends GetView<HomeController> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Icon(Icons.storage_outlined),
+                                    FaIcon(
+                                      FontAwesomeIcons.ellipsisH,
+                                      color: Colors.white,
+                                    )
                                   ],
                                 ),
                               ),
@@ -175,7 +195,7 @@ class Home extends GetView<HomeController> {
                               width: h * 8 / 100,
                               child: Center(
                                   child: Text(
-                                "data",
+                                "Mountain",
                                 style: TextStyle(color: Colors.white),
                               )),
                             ),
@@ -183,7 +203,7 @@ class Home extends GetView<HomeController> {
                               width: h * 8 / 100,
                               child: Center(
                                   child: Text(
-                                "data",
+                                "Waterfall",
                                 style: TextStyle(color: Colors.white),
                               )),
                             ),
@@ -191,7 +211,7 @@ class Home extends GetView<HomeController> {
                               width: h * 8 / 100,
                               child: Center(
                                   child: Text(
-                                "data",
+                                "Other",
                                 style: TextStyle(color: Colors.white),
                               )),
                             ),
