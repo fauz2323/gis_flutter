@@ -12,4 +12,5 @@ abstract class _Path {
   static const MAPS = '/maps';
   static const PAGE = '/pages';
   static const MENUS = '/menus';
+  static const DETAIL = '/details';
 }

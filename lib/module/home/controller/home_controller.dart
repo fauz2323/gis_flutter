@@ -5,7 +5,7 @@ import 'dart:convert';
 
 class HomeController extends GetxController {
   var API = Uri.parse(
-      'http://dataservice.accuweather.com/currentconditions/v1/202507?apikey=coC85AhOzG5pqAruH8xv3Xwo8sGAt9Zi');
+      'https://dataservice.accuweather.com/currentconditions/v1/202507?apikey=coC85AhOzG5pqAruH8xv3Xwo8sGAt9Zi');
   late WeatherModel weatherModel;
   var loading = true.obs;
 
@@ -17,6 +17,7 @@ class HomeController extends GetxController {
       weatherModel = WeatherModel.fromJson(jsonData[0]);
       loading.value = false;
     } catch (e) {
+      print("error");
       loading.value = false;
     }
   }

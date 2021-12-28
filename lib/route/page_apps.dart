@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:skripsi_ui/module/boarding_page/binding/boarding_bindings.dart';
 import 'package:skripsi_ui/module/boarding_page/view/boarding.dart';
+import 'package:skripsi_ui/module/detail/binding/details_binding.dart';
+import 'package:skripsi_ui/module/detail/view/details.dart';
 import 'package:skripsi_ui/module/home/binding/home_binding.dart';
 import 'package:skripsi_ui/module/home/view/home.dart';
 import 'package:skripsi_ui/module/maps/binding/maps_bindings.dart';
@@ -49,6 +51,11 @@ abstract class AppPages {
       name: _Path.MENUS,
       page: () => Menus(),
       binding: MenusBinding(),
+    ),
+    GetPage(
+      name: _Path.DETAIL,
+      page: () => Details(),
+      binding: DetailsBinding(),
     ),
   ];
 }

@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_constructors, ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:skripsi_ui/module/home/controller/home_controller.dart';
+import 'package:skripsi_ui/module/page_item/view/widget/list_widget.dart';
 
 class Home extends GetView<HomeController> {
   const Home({Key? key}) : super(key: key);
@@ -32,29 +34,35 @@ class Home extends GetView<HomeController> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "Selamat mengexplore wisata",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
+                        SizedBox(
+                          height: h * 4 / 100,
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            "Kabupaten Bogor",
+                            "Hi, Have a nice day",
                             style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                         ),
                         // Padding(
                         //   padding: const EdgeInsets.all(8.0),
                         //   child: Text(
-                        //     '${controller.weatherModel.weatherText} ${controller.weatherModel.temperature.metric.value} °C',
+                        //     "Kabupaten Bogor",
                         //     style: TextStyle(color: Colors.white, fontSize: 20),
                         //   ),
                         // ),
+                        (controller.weatherModel.weatherText != null)
+                            ? Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  '${controller.weatherModel.weatherText} ${controller.weatherModel.temperature.metric.value} °C',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
+                              )
+                            : Text("data"),
                         SizedBox(
-                          height: 20,
+                          height: h * 5 / 100,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -194,18 +202,22 @@ class Home extends GetView<HomeController> {
                             SizedBox(
                               width: h * 8 / 100,
                               child: Center(
-                                  child: Text(
-                                "Mountain",
-                                style: TextStyle(color: Colors.white),
-                              )),
+                                child: AutoSizeText(
+                                  "Mountains",
+                                  style: TextStyle(color: Colors.white),
+                                  maxLines: 1,
+                                ),
+                              ),
                             ),
                             SizedBox(
                               width: h * 8 / 100,
                               child: Center(
-                                  child: Text(
-                                "Waterfall",
-                                style: TextStyle(color: Colors.white),
-                              )),
+                                child: AutoSizeText(
+                                  "Waterfall",
+                                  style: TextStyle(color: Colors.white),
+                                  maxLines: 1,
+                                ),
+                              ),
                             ),
                             SizedBox(
                               width: h * 8 / 100,
@@ -244,226 +256,18 @@ class Home extends GetView<HomeController> {
                           ),
                         ),
                         Expanded(
-                          child: InkWell(
-                            child: ListView(
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.all(20),
-                                  width: w * 90 / 100,
-                                  height: h * 20 / 100,
-                                  margin: EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://i.pinimg.com/originals/15/f6/a3/15f6a3aac562ee0fadbbad3d4cdf47bc.jpg"),
-                                      fit: BoxFit.cover,
-                                      colorFilter: ColorFilter.mode(
-                                          Colors.black.withOpacity(0.5),
-                                          BlendMode.dstATop),
-                                    ),
-                                    color: Colors.black,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(20),
-                                    ),
-                                  ),
-                                  child: Align(
-                                    alignment: Alignment.bottomLeft,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "Wisata Danau",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        Text(
-                                          "Open",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(20),
-                                  width: w * 90 / 100,
-                                  height: h * 20 / 100,
-                                  margin: EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://i.pinimg.com/originals/15/f6/a3/15f6a3aac562ee0fadbbad3d4cdf47bc.jpg"),
-                                      fit: BoxFit.cover,
-                                      colorFilter: ColorFilter.mode(
-                                          Colors.black.withOpacity(0.5),
-                                          BlendMode.dstATop),
-                                    ),
-                                    color: Colors.black,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(20),
-                                    ),
-                                  ),
-                                  child: Align(
-                                    alignment: Alignment.bottomLeft,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "Wisata Danau",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        Text(
-                                          "Open",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(20),
-                                  width: w * 90 / 100,
-                                  height: h * 20 / 100,
-                                  margin: EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://i.pinimg.com/originals/15/f6/a3/15f6a3aac562ee0fadbbad3d4cdf47bc.jpg"),
-                                      fit: BoxFit.cover,
-                                      colorFilter: ColorFilter.mode(
-                                          Colors.black.withOpacity(0.5),
-                                          BlendMode.dstATop),
-                                    ),
-                                    color: Colors.black,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(20),
-                                    ),
-                                  ),
-                                  child: Align(
-                                    alignment: Alignment.bottomLeft,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "Wisata Danau",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        Text(
-                                          "Open",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(20),
-                                  width: w * 90 / 100,
-                                  height: h * 20 / 100,
-                                  margin: EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://i.pinimg.com/originals/15/f6/a3/15f6a3aac562ee0fadbbad3d4cdf47bc.jpg"),
-                                      fit: BoxFit.cover,
-                                      colorFilter: ColorFilter.mode(
-                                          Colors.black.withOpacity(0.5),
-                                          BlendMode.dstATop),
-                                    ),
-                                    color: Colors.black,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(20),
-                                    ),
-                                  ),
-                                  child: Align(
-                                    alignment: Alignment.bottomLeft,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "Wisata Danau",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        Text(
-                                          "Open",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.all(20),
-                                  width: w * 90 / 100,
-                                  height: h * 20 / 100,
-                                  margin: EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          "https://i.pinimg.com/originals/15/f6/a3/15f6a3aac562ee0fadbbad3d4cdf47bc.jpg"),
-                                      fit: BoxFit.cover,
-                                      colorFilter: ColorFilter.mode(
-                                          Colors.black.withOpacity(0.5),
-                                          BlendMode.dstATop),
-                                    ),
-                                    color: Colors.black,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(20),
-                                    ),
-                                  ),
-                                  child: Align(
-                                    alignment: Alignment.bottomLeft,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "Wisata Danau",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        Text(
-                                          "Open",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                          child: ListView(
+                            children: [
+                              PageListView(w: w, h: h),
+                              PageListView(w: w, h: h),
+                              PageListView(w: w, h: h),
+                              PageListView(w: w, h: h),
+                              PageListView(w: w, h: h),
+                              PageListView(w: w, h: h),
+                              PageListView(w: w, h: h),
+                              PageListView(w: w, h: h),
+                              PageListView(w: w, h: h),
+                            ],
                           ),
                         ),
                       ],
